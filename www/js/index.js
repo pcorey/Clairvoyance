@@ -46,7 +46,7 @@ var app = {
 
         console.log('Received Event: ' + id);
 
-        navigator.notification.vibrate(3000);
+        navigator.notification.vibrate(500);
 
         alert(io);
         var socket = io.connect('http://clairvoy.herokuapp.com');

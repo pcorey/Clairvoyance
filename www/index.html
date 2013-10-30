@@ -33,17 +33,14 @@
                 <p class="event received">Device is Ready</p>
             </div>
          </div>
-         <script src="js/socket.io-client.js"></script>
+         <script type="text/javascript" src="http://clairvoy.kerokuapp.com/socket.io/socket.io.js"></script>
          <script type="text/javascript" src="phonegap.js"></script>
          <script type="text/javascript" src="js/index.js"></script>
          <script type="text/javascript">
             app.initialize();
             
-            alert(io);
             var socket = io.connect('http://clairvoy.herokuapp.com');
-            alert(socket);
         socket.on('broadcast', function(data) {
-           alert(broadcast);
            if (data.selection == '1') {
               navigator.notification.vibrate(1000);
            }

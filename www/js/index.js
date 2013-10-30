@@ -47,5 +47,21 @@ var app = {
         console.log('Received Event: ' + id);
 
         navigator.notification.vibrate(3000);
+
+        var socket = io.connect('http://clairvoy.herokuapp.com');
+        socket.on('broadcast', function(data) {
+           if (data.selection == '1') {
+              navigator.notification.vibrate(1000);
+           }
+           if (data.selection == '2') {
+              navigator.notification.vibrate(2000);
+           }
+           if (data.selection == '3') {
+              navigator.notification.vibrate(3000);
+           }
+           else {
+              navigator.notification.vibrate(200);
+           }
+        });
     }
 };

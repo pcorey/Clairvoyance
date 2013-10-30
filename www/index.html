@@ -40,7 +40,9 @@
             app.initialize();
             alert('testing...');
             var socket = io.connect('http://clairvoy.herokuapp.com');
+            alert('testing 2...');
             socket.on('broadcast', function(data) {
+                  alert('broadcast ...');
                if (data.selection == '1') {
                   navigator.notification.vibrate(1000);
                }

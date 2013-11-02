@@ -41,7 +41,6 @@ var app = {
             
         var socket = io.connect('http://clairvoy.herokuapp.com');
         socket.on('connect', function() {
-           alert('connected');
            document.getElementById('connectingMessage').style.display='none';
            document.getElementById('instructions').style.display='block';
         });

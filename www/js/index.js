@@ -47,12 +47,12 @@ var app = {
         console.log('Received Event: ' + id);
             
         var socket = io.connect('http://clairvoy.herokuapp.com');
-        socket.on('connect', function() {
+/*        socket.on('connect', function() {
            alert('connected');
            document.getElementById('connectingMessage').style.display='none';
            document.getElementById('instructions').style.display='block';
         });
-
+*/
         socket.on('broadcast', function(data) {
            if (data.selection == '1') {
               navigator.notification.vibrate(1000);

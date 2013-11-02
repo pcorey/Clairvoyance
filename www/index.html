@@ -26,33 +26,15 @@
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+       <div class="app">
+          <h1>Clairvoyance</h1>
+          <p id="connectingMessage">Connecting to server...</p>
          </div>
          <script type="text/javascript" src="http://clairvoy.herokuapp.com/socket.io/socket.io.js"></script>
          <script type="text/javascript" src="phonegap.js"></script>
          <script type="text/javascript" src="js/index.js"></script>
          <script type="text/javascript">
             app.initialize();
-            var socket = io.connect('http://clairvoy.herokuapp.com');
-            socket.on('broadcast', function(data) {
-               if (data.selection == '1') {
-                  navigator.notification.vibrate(1000);
-               }
-               if (data.selection == '2') {
-                  navigator.notification.vibrate(2000);
-               }
-               if (data.selection == '3') {
-                  navigator.notification.vibrate(3000);
-               }
-               else {
-                  navigator.notification.vibrate(200);
-               }
-            });
          </script>
     </body>
 </html>

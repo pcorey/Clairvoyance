@@ -40,8 +40,8 @@ var app = {
         if (times == 0) {
           return;
         }
-        navigator.notification.vibrate(250);
-        setTimeout(app.vibrate, 500, times-1);
+        navigator.notification.vibrate(150);
+        setTimeout(app.vibrate, 300, times-1);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

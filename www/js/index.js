@@ -42,7 +42,7 @@ var app = {
         }
         navigator.notification.vibrate(250);
         setTimeout(vibrate, 500, times-1);
-    }
+    },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         console.log('Received Event: ' + id);

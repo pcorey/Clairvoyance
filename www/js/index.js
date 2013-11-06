@@ -54,7 +54,7 @@ var app = {
         });
 
         socket.on('broadcast', function(data) {
-           vibrate(parseInt(data.selection));
+           app.vibrate(parseInt(data.selection));
         });
     }
 };

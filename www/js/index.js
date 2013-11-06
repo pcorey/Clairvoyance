@@ -35,6 +35,14 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
+
+    vibrate: function(times) {
+        if (times == 0) {
+          return;
+        }
+        navigator.notification.vibrate(250);
+        setTimeout(vibrate, 500, times-1);
+    }
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         console.log('Received Event: ' + id);
@@ -46,18 +54,7 @@ var app = {
         });
 
         socket.on('broadcast', function(data) {
-           if (data.selection == '1') {
-              navigator.notification.vibrate(1000);
-           }
-           if (data.selection == '2') {
-              navigator.notification.vibrate(2000);
-           }
-           if (data.selection == '3') {
-              navigator.notification.vibrate(3000);
-           }
-           else {
-              navigator.notification.vibrate(200);
-           }
+           vibrate(parseInt(data.selection));
         });
     }
 };
